@@ -1,0 +1,408 @@
+#headerContainer {
+    width: 100%;
+    min-width: 1220px;
+    height: 130px;
+    padding: 25px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000000;
+}
+
+
+/* Header의 실질적 컨테이너 역할 */
+#headerBar {
+    width: 100%;
+    height: 100%;
+    background-color: #2C2E49;
+    border-radius: 20px;
+    padding: 0 60px;
+    box-shadow: 0 0 10px black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+/* logo */
+#logo {
+    width: 150px;
+    height: 100%;
+    order: 1;
+    text-indent: -9999em;
+    background: url(/resources/images/static/logo_before.png) center center no-repeat;
+    transition: all 0.5s;
+}
+
+#logo>a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#logo:hover {
+    background: url(/resources/images/static/logo_after.png) center center no-repeat;
+}
+
+
+
+
+
+/* header의 menu 부분 */
+#headerBar>div {
+    width: 320px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#headerBar>div>div {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 2rem;
+    position: relative;
+}
+
+#headerBar>div>div>div {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+}
+
+
+#gameMenu {
+    background: url(/resources/images/static/game_menu.png) center center no-repeat;
+}
+
+
+#etcMenu {
+    background: url(/resources/images/static/other_menu.png) center center no-repeat;
+}
+
+
+#gameMenu>div:hover,
+#etcMenu>div:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+
+
+/* hover 시 나오는 메뉴 부분 */
+#headerBar>div>div>ul {
+    width: 280px;
+    height: 240px;
+    background-color: #222222;
+    border-radius: 10px;
+    position: absolute;
+    left: -65px;
+    top: calc(100% + 20px);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.7s;
+}
+
+
+/* 메뉴 리스트 나오게끔 하기 위한 효과 */
+#gameMenu:hover>ul,
+#etcMenu:hover>ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+/* 화살표를 위한 li 태그 */
+#headerBar>div>div>ul>li:first-of-type {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: calc((100% - 20px) / 2);
+    bottom: 100%;
+    border-bottom: 20px solid #222222;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+
+
+
+/* 메뉴의 list 컨테이너들 */
+#headerBar>div>div>ul>li:not(:first-of-type) {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+#headerBar>div>div>ul>li:not(:first-of-type)>div {
+    width: 70px;
+    height: 100%;
+}
+
+#headerBar>div>div>ul>li:not(:first-of-type)>p {
+    width: 180px;
+    height: 100%;
+    padding: 10px 0;
+}
+
+
+
+
+
+
+
+/* 메뉴 리스트 내부s */
+#toPang>div {
+    background: url(/resources/images/static/pang_70.png) center center no-repeat;
+}
+
+#toRhythm>div {
+    background: url(/resources/images/static/rhythm_70.png) center center no-repeat;
+}
+
+#toFlight>div {
+    background: url(/resources/images/static/flight_70.png) center center no-repeat;
+}
+
+
+#gameList>li>p {
+    display: flex;
+    flex-direction: column;
+}
+
+#gameList>li>p>span {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+}
+
+#gameList>li>p>span:first-of-type {
+    width: 100%;
+    height: 60%;
+    font-size: 2rem;
+}
+
+#gameList>li>p>span:last-of-type {
+    width: 100%;
+    height: 40%;
+    font-size: 1.4rem;
+    color: gray;
+}
+
+
+
+
+
+
+#toBoard>div {
+    background: url(/resources/images/static/board_70.png) center center no-repeat;
+}
+
+#toChat>div {
+    background: url(/resources/images/static/chat_70.png) center center no-repeat;
+}
+
+#toContact>div {
+    background: url(/resources/images/static/contact_70.png) center center no-repeat;
+}
+
+
+#etcList>li>p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 2rem;
+    padding-left: 10px;
+}
+
+
+
+
+
+#headerBar>div>div>ul>li:not(:first-of-type)>a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+#headerBar>div>div>ul>li:not(:first-of-type)>a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+
+/* 유저 메뉴 버튼 */
+#headerBar>#userMenuContainer {
+    order: 2;
+    justify-content: flex-end;
+}
+
+#userMenu {
+    width: 150px;
+    height: 50px;
+    background: url(/resources/images/static/user_menu.png) center center no-repeat;
+}
+
+
+#userMenu>div {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+}
+
+#userMenu>div:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+/* hover 시 나오는 메뉴 부분 */
+#userMenuContainer>#userMenu>ul {
+    width: 280px;
+    height: 170px;
+    background-color: #222222;
+    border-radius: 10px;
+    position: absolute;
+    left: -65px;
+    top: calc(100% + 20px);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.7s;
+}
+
+
+/* 메뉴 리스트 나오게끔 하기 위한 효과 */
+#userMenuContainer>#userMenu:hover>ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+/* 화살표를 위한 li 태그 */
+#userMenuContainer>#userMenu>ul>li:first-of-type {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: calc((100% - 20px) / 2);
+    bottom: 100%;
+    border-bottom: 20px solid #222222;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+
+
+
+/* 메뉴의 list 컨테이너들 */
+#userMenuContainer>#userMenu>ul>li:not(:first-of-type) {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+#userMenuContainer>#userMenu>ul>li:not(:first-of-type)>div {
+    width: 70px;
+    height: 100%;
+}
+
+#userMenuContainer>#userMenu>ul>li:not(:first-of-type)>p {
+    width: 180px;
+    height: 100%;
+    padding: 10px 0;
+}
+
+
+
+
+/* 메뉴 리스트 내부s */
+#toLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#userMenuContainer>#userMenu>ul>#toLogin>p {
+    width: 100%;
+    height: 80%;
+    background-color: #4189ff;
+    border-radius: 10px;
+    display: felx;
+    justify-content: center;
+    align-items: center;
+}
+
+#toJoin>div {
+    background: url(/resources/images/static/join_menu_btn.png) center center no-repeat;
+}
+
+
+#userList>li>p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 2rem;
+    padding-left: 10px;
+}
+
+
+
+
+
+#headerBar>div>div>#userList>li:not(:first-of-type)>a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+#headerBar>div>div>#userList>li:not(:first-of-type):not(:last-of-type)>a {
+    height: 80%;
+    top: 10%;
+    border-radius: 10px;
+}
+
+
+#headerBar>div>div>#userList>li:not(:first-of-type)>a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+#headerBar>div>div>#userList>li:not(:first-of-type):not(:last-of-type)>a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}

@@ -11,7 +11,8 @@ html {
 }
 
 body {
-    background-color: #ECECEC;
+    background-image: linear-gradient(90deg, #000518, #181B39, #000518);
+    min-width: 1024px;
 }
 
 h1,
